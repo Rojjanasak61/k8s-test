@@ -1,0 +1,16 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: read-db-job
+spec:
+  ttlSecondsAfterFinished: 2
+  template:
+    metadata:
+      name: read-db
+      labels:
+        app: read-db
+    spec:
+      containers:
+        - name: read-db
+          image: homesrh/read_db:2.0
+      restartPolicy: Never
