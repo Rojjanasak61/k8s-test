@@ -3,7 +3,7 @@ kind: Job
 metadata:
   name: read-db-job
 spec:
-  ttlSecondsAfterFinished: 2
+  ttlSecondsAfterFinished: 100
   template:
     metadata:
       name: read-db
@@ -12,5 +12,5 @@ spec:
     spec:
       containers:
         - name: read-db
-          image: homesrh/read_db:2.0
+          image: homesrh/read_db:4.0
       restartPolicy: Never

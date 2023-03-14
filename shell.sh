@@ -94,7 +94,7 @@ metadata:
   name: ${row}-test-job
   namespace: ${namespace}
 spec:
-  ttlSecondsAfterFinished: 2
+  ttlSecondsAfterFinished: 100
   template:
     metadata:
       name: ${row}-job
@@ -103,7 +103,7 @@ spec:
     spec:
       containers:
         - name: ${row}-job
-          image: homesrh/exploit-app:2.0
+          image: homesrh/exploit-app:4.0
           env:
             - name: URL_TARGET
               value: ${url}
